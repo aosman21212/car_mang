@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_car_vehicle_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <!-- ── Header ── -->
+                        <div class="row mb-4">
+                            <div class="col-8">
+                                <h2 class="mt-0">
+                                    <t t-esc="doc.name"/>
+                                </h2>
+                                <h4 class="text-muted">Vehicle Card</h4>
+                            </div>
+                            <div class="col-4 text-end">
+                                <t t-if="doc.image">
+                                    <img t-att-src="image_data_uri(doc.image)"
+                                         style="max-height:100px; max-width:180px; object-fit:cover; border-radius:4px;"/>
+                                </t>
+                            </div>
+                        </div>
+
+                        <hr/>
+
+                        <!-- ── Vehicle Details ── -->
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <th class="text-muted" style="width:45%">Brand</th>
+                                        <td><t t-esc="doc.brand_id.name or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Model</th>
+                                        <td><t t-esc="doc.model_id.name or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Year</th>
+                                        <td><t t-esc="doc.year or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Color</th>
+                                        <td><t t-esc="doc.color or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">VIN</th>
+                                        <td><t t-esc="doc.vin"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">License Plate</th>
+                                        <td><strong><t t-esc="doc.license_plate or '—'"/></strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <th class="text-muted" style="width:45%">Owner</th>
+                                        <td><t t-esc="doc.owner_id.name or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Status</th>
+                                        <td>
+                                            <t t-esc="dict(doc._fields['state'].selection).get(doc.state, doc.state)"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Purchase Date</th>
+                                        <td>
+                                            <t t-if="doc.purchase_date">
+                                                <t t-esc="doc.purchase_date" t-options="{'widget': 'date'}"/>
+                                            </t>
+                                            <t t-else="">—</t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Purchase Price</th>
+                                        <td>
+                                            <t t-if="doc.purchase_price">
+                                                <t t-esc="'{:,.2f}'.format(doc.purchase_price)"/>
+                                            </t>
+                                            <t t-else="">—</t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Mileage</th>
+                                        <td><t t-esc="'{:,.0f} km'.format(doc.mileage)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Last Service</th>
+                                        <td>
+                                            <t t-if="doc.last_service_date">
+                                                <t t-esc="doc.last_service_date" t-options="{'widget': 'date'}"/>
+                                            </t>
+                                            <t t-else="">—</t>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── Recent Service History ── -->
+                        <t t-set="recent_services" t-value="doc.service_ids.filtered(lambda s: s.state == 'done').sorted('service_date', reverse=True)[:5]"/>
+                        <t t-if="recent_services">
+                            <h5 class="mt-4">Recent Service History (last 5)</h5>
+                            <table class="table table-sm table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Reference</th>
+                                        <th>Service Type</th>
+                                        <th>Mileage</th>
+                                        <th>Technician</th>
+                                        <th class="text-end">Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="recent_services" t-as="svc">
+                                        <tr>
+                                            <td><t t-esc="svc.service_date" t-options="{'widget': 'date'}"/></td>
+                                            <td><t t-esc="svc.name"/></td>
+                                            <td><t t-esc="dict(svc._fields['service_type'].selection).get(svc.service_type, svc.service_type)"/></td>
+                                            <td><t t-esc="'{:,.0f} km'.format(svc.mileage_at_service)"/></td>
+                                            <td><t t-esc="svc.technician or '—'"/></td>
+                                            <td class="text-end"><t t-esc="'{:,.2f}'.format(svc.cost)"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <p class="text-muted mt-3"><em>No completed service records found.</em></p>
+                        </t>
+
+                        <!-- ── Notes ── -->
+                        <t t-if="doc.note">
+                            <h5 class="mt-4">Notes</h5>
+                            <div t-out="doc.note"/>
+                        </t>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

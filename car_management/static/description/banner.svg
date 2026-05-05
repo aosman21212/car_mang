@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="80"  r="180" fill="#e94560" opacity="0.07"/>
+  <circle cx="150"  cy="320" r="120" fill="#e94560" opacity="0.05"/>
+  <circle cx="600"  cy="420" r="200" fill="#0f3460" opacity="0.3"/>
+
+  <!-- Car icon (simplified SVG car) -->
+  <g transform="translate(760, 100) scale(1.8)">
+    <!-- Car body -->
+    <rect x="10" y="60" width="180" height="55" rx="10" fill="#e94560" opacity="0.9"/>
+    <!-- Car roof -->
+    <path d="M 40 60 Q 60 20 100 18 Q 140 16 160 60 Z" fill="#e94560"/>
+    <!-- Windows -->
+    <path d="M 48 58 Q 62 30 100 28 Q 120 27 140 58 Z" fill="#16213e" opacity="0.7"/>
+    <!-- Wheels -->
+    <circle cx="50"  cy="118" r="22" fill="#1a1a2e" stroke="#a8b2c8" stroke-width="5"/>
+    <circle cx="150" cy="118" r="22" fill="#1a1a2e" stroke="#a8b2c8" stroke-width="5"/>
+    <circle cx="50"  cy="118" r="8"  fill="#a8b2c8"/>
+    <circle cx="150" cy="118" r="8"  fill="#a8b2c8"/>
+    <!-- Headlight -->
+    <rect x="185" y="75" width="18" height="10" rx="3" fill="#ffe066" opacity="0.9"/>
+    <!-- Tail light -->
+    <rect x="7"   y="75" width="14" height="10" rx="3" fill="#ff6b6b" opacity="0.9"/>
+  </g>
+
+  <!-- Title -->
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="58"
+        font-weight="800" fill="#ffffff">Car Management</text>
+  <text x="100" y="235" font-family="Arial, sans-serif" font-size="58"
+        font-weight="800" fill="#e94560">System</text>
+
+  <!-- Subtitle -->
+  <text x="100" y="285" font-family="Arial, sans-serif" font-size="22"
+        fill="#a8b2c8">Complete fleet &amp; service management for Odoo 19</text>
+
+  <!-- Badges -->
+  <rect x="100" y="315" width="130" height="36" rx="18" fill="#e94560" opacity="0.15"
+        stroke="#e94560" stroke-width="1.5"/>
+  <text x="165" y="338" font-family="Arial, sans-serif" font-size="14" fill="#e94560"
+        text-anchor="middle">🚗 Fleet</text>
+
+  <rect x="245" y="315" width="160" height="36" rx="18" fill="#e94560" opacity="0.15"
+        stroke="#e94560" stroke-width="1.5"/>
+  <text x="325" y="338" font-family="Arial, sans-serif" font-size="14" fill="#e94560"
+        text-anchor="middle">🔧 Services</text>
+
+  <rect x="420" y="315" width="160" height="36" rx="18" fill="#e94560" opacity="0.15"
+        stroke="#e94560" stroke-width="1.5"/>
+  <text x="500" y="338" font-family="Arial, sans-serif" font-size="14" fill="#e94560"
+        text-anchor="middle">💳 Invoicing</text>
+
+  <rect x="595" y="315" width="160" height="36" rx="18" fill="#e94560" opacity="0.15"
+        stroke="#e94560" stroke-width="1.5"/>
+  <text x="675" y="338" font-family="Arial, sans-serif" font-size="14" fill="#e94560"
+        text-anchor="middle">📊 Reporting</text>
+
+  <!-- Odoo 19 badge -->
+  <rect x="1070" y="20" width="110" height="36" rx="18" fill="#e94560"/>
+  <text x="1125" y="43" font-family="Arial, sans-serif" font-size="15" fill="#fff"
+        text-anchor="middle" font-weight="bold">Odoo 19.0</text>
+</svg>

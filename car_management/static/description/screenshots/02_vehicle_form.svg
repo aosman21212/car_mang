@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <!-- Background -->
+  <rect width="1400" height="860" fill="#f5f5f5"/>
+
+  <!-- TOP NAV BAR -->
+  <rect x="0" y="0" width="1400" height="52" fill="#2c2c2c"/>
+  <rect x="14" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="14" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <text x="42" y="32" font-size="16" fill="#fff" font-weight="600" font-family="Arial,sans-serif">Car Management</text>
+  <text x="230" y="33" font-size="14" fill="#fff" opacity="0.85" font-family="Arial,sans-serif">Vehicles</text>
+  <text x="300" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Services</text>
+  <text x="375" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Reporting</text>
+  <circle cx="1368" cy="26" r="16" fill="#714B67"/>
+  <text x="1368" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">A</text>
+
+  <!-- BREADCRUMB -->
+  <rect x="0" y="52" width="1400" height="44" fill="#fff"/>
+  <rect x="0" y="95" width="1400" height="1" fill="#dee2e6"/>
+  <text x="24" y="80" font-size="14" fill="#714B67" font-family="Arial,sans-serif">All Vehicles</text>
+  <text x="114" y="80" font-size="14" fill="#6c757d" font-family="Arial,sans-serif">›</text>
+  <text x="126" y="80" font-size="15" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Corolla 2021 [ABC-1234]</text>
+
+  <!-- ACTION BUTTONS -->
+  <rect x="992" y="62" width="64" height="28" rx="4" fill="#714B67"/>
+  <text x="1024" y="81" font-size="13" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">Save</text>
+  <rect x="1064" y="62" width="76" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1102" y="81" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Discard</text>
+  <rect x="1148" y="62" width="90" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1193" y="81" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">⚙ Action</text>
+  <rect x="1246" y="62" width="90" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1291" y="81" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">🖨 Print</text>
+
+  <!-- FORM CARD -->
+  <rect x="16" y="108" width="980" height="580" rx="6" fill="#fff" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- STATUS BAR -->
+  <text x="40" y="148" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">Status:</text>
+  <!-- Steps -->
+  <rect x="96" y="133" width="90" height="28" rx="14" fill="#d4edda"/>
+  <text x="141" y="152" font-size="12" fill="#155724" text-anchor="middle" font-family="Arial,sans-serif">● Available</text>
+  <text x="198" y="148" font-size="12" fill="#adb5bd" font-family="Arial,sans-serif">—</text>
+  <rect x="212" y="133" width="68" height="28" rx="14" fill="none" stroke="#dee2e6"/>
+  <text x="246" y="152" font-size="12" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">In Use</text>
+  <text x="292" y="148" font-size="12" fill="#adb5bd" font-family="Arial,sans-serif">—</text>
+  <rect x="306" y="133" width="90" height="28" rx="14" fill="none" stroke="#dee2e6"/>
+  <text x="351" y="152" font-size="12" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">Maintenance</text>
+  <text x="408" y="148" font-size="12" fill="#adb5bd" font-family="Arial,sans-serif">—</text>
+  <rect x="422" y="133" width="52" height="28" rx="14" fill="none" stroke="#dee2e6"/>
+  <text x="448" y="152" font-size="12" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">Sold</text>
+
+  <!-- DIVIDER -->
+  <rect x="16" y="174" width="980" height="1" fill="#f0f0f0"/>
+
+  <!-- FIELD GRID - LEFT -->
+  <!-- VIN -->
+  <text x="40" y="208" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Vehicle Name</text>
+  <text x="40" y="228" font-size="15" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Corolla 2021 [ABC-1234]</text>
+
+  <text x="40" y="265" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Brand</text>
+  <text x="40" y="285" font-size="14" fill="#212529" font-family="Arial,sans-serif">Toyota</text>
+  <text x="280" y="265" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Model</text>
+  <text x="280" y="285" font-size="14" fill="#212529" font-family="Arial,sans-serif">Corolla</text>
+
+  <text x="40" y="320" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">License Plate</text>
+  <text x="40" y="340" font-size="14" fill="#212529" font-family="Arial,sans-serif">ABC-1234</text>
+  <text x="280" y="320" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">VIN</text>
+  <text x="280" y="340" font-size="14" fill="#212529" font-family="Arial,sans-serif">1HGCM82633A004352</text>
+
+  <text x="40" y="375" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Year</text>
+  <text x="40" y="395" font-size="14" fill="#212529" font-family="Arial,sans-serif">2021</text>
+  <text x="280" y="375" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Color</text>
+  <text x="280" y="395" font-size="14" fill="#212529" font-family="Arial,sans-serif">White</text>
+
+  <text x="40" y="430" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Mileage (km)</text>
+  <text x="40" y="450" font-size="14" fill="#212529" font-family="Arial,sans-serif">32,500</text>
+  <text x="280" y="430" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Owner</text>
+  <text x="280" y="450" font-size="14" fill="#714B67" font-family="Arial,sans-serif">Ahmed Al-Rashid</text>
+
+  <text x="40" y="485" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Purchase Date</text>
+  <text x="40" y="505" font-size="14" fill="#212529" font-family="Arial,sans-serif">03/15/2021</text>
+  <text x="280" y="485" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Notes</text>
+  <text x="280" y="505" font-size="14" fill="#6c757d" font-family="Arial,sans-serif">Regular maintenance schedule</text>
+
+  <!-- DIVIDER -->
+  <rect x="16" y="530" width="980" height="1" fill="#f0f0f0"/>
+
+  <!-- SMART BUTTONS ROW -->
+  <text x="40" y="560" font-size="13" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">SMART BUTTONS</text>
+  <rect x="40" y="572" width="120" height="60" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="100" y="598" font-size="22" text-anchor="middle" font-family="Arial,sans-serif">🔧</text>
+  <text x="100" y="618" font-size="12" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">4 Services</text>
+  <rect x="174" y="572" width="120" height="60" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="234" y="598" font-size="22" text-anchor="middle" font-family="Arial,sans-serif">💳</text>
+  <text x="234" y="618" font-size="12" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">2 Invoices</text>
+  <rect x="308" y="572" width="120" height="60" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="368" y="598" font-size="22" text-anchor="middle" font-family="Arial,sans-serif">📋</text>
+  <text x="368" y="618" font-size="12" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">History</text>
+
+  <!-- CHATTER PANEL -->
+  <rect x="1008" y="108" width="376" height="580" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="1024" y="138" font-size="14" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Log Note</text>
+  <text x="1100" y="138" font-size="14" fill="#714B67" font-family="Arial,sans-serif">Send Message</text>
+  <text x="1255" y="138" font-size="14" fill="#6c757d" font-family="Arial,sans-serif">Activity</text>
+  <rect x="1008" y="148" width="376" height="1" fill="#dee2e6"/>
+
+  <!-- Message input -->
+  <rect x="1024" y="160" width="344" height="70" rx="4" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="1040" y="200" font-size="13" fill="#adb5bd" font-family="Arial,sans-serif">Log an internal note...</text>
+
+  <rect x="1024" y="244" width="60" height="26" rx="4" fill="#714B67"/>
+  <text x="1054" y="262" font-size="12" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">Add</text>
+
+  <!-- Messages -->
+  <rect x="1008" y="280" width="376" height="1" fill="#f0f0f0"/>
+  <text x="1024" y="306" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Today</text>
+  <circle cx="1042" cy="332" r="14" fill="#e8d5f0"/>
+  <text x="1042" y="337" font-size="10" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">A</text>
+  <text x="1064" y="326" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Administrator</text>
+  <text x="1064" y="344" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Vehicle registered in the system</text>
+
+  <circle cx="1042" cy="378" r="14" fill="#d1ecf1"/>
+  <text x="1042" y="383" font-size="10" fill="#0c5460" text-anchor="middle" font-family="Arial,sans-serif">T</text>
+  <text x="1064" y="372" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Technician</text>
+  <text x="1064" y="390" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Scheduled 10,000km service</text>
+
+  <!-- LABEL -->
+  <rect x="0" y="830" width="320" height="30" fill="#714B67" opacity="0.9"/>
+  <text x="12" y="851" font-size="14" fill="#fff" font-weight="600" font-family="Arial,sans-serif">🚗 Vehicle Form — Full Detail View</text>
+</svg>

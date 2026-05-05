@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══ Top-level App Menu ═══ -->
+    <menuitem id="menu_car_management_root"
+              name="Car Management"
+              sequence="50"
+              web_icon="car_management,static/description/icon.png"/>
+
+    <!-- ═══ Vehicles ═══ -->
+    <menuitem id="menu_car_vehicles"
+              name="Vehicles"
+              parent="menu_car_management_root"
+              sequence="10"/>
+
+    <menuitem id="menu_car_vehicle_list"
+              name="All Vehicles"
+              parent="menu_car_vehicles"
+              action="action_car_vehicle"
+              sequence="10"/>
+
+    <!-- ═══ Services ═══ -->
+    <menuitem id="menu_car_services"
+              name="Services"
+              parent="menu_car_management_root"
+              sequence="20"/>
+
+    <menuitem id="menu_car_service_list"
+              name="Service Records"
+              parent="menu_car_services"
+              action="action_car_service"
+              sequence="10"/>
+
+    <!-- ═══ Configuration ═══ -->
+    <menuitem id="menu_car_config"
+              name="Configuration"
+              parent="menu_car_management_root"
+              sequence="90"/>
+
+    <menuitem id="menu_car_brand"
+              name="Brands"
+              parent="menu_car_config"
+              action="action_car_brand"
+              sequence="10"/>
+
+    <menuitem id="menu_car_model"
+              name="Models"
+              parent="menu_car_config"
+              action="action_car_model"
+              sequence="20"/>
+
+</odoo>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  car.service  –  Graph & Pivot                                    -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+
+    <record id="view_car_service_graph" model="ir.ui.view">
+        <field name="name">car.service.graph</field>
+        <field name="model">car.service</field>
+        <field name="arch" type="xml">
+            <graph string="Service Cost Analysis" type="bar" sample="1">
+                <field name="service_date" interval="month" type="row"/>
+                <field name="service_type" type="col"/>
+                <field name="cost" type="measure"/>
+                <field name="parts_cost" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_car_service_pivot" model="ir.ui.view">
+        <field name="name">car.service.pivot</field>
+        <field name="model">car.service</field>
+        <field name="arch" type="xml">
+            <pivot string="Service Cost Analysis" sample="1">
+                <field name="vehicle_id" type="row"/>
+                <field name="service_type" type="col"/>
+                <field name="cost" type="measure"/>
+                <field name="parts_cost" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  car.vehicle  –  Graph & Pivot                                    -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+
+    <record id="view_car_vehicle_graph" model="ir.ui.view">
+        <field name="name">car.vehicle.graph</field>
+        <field name="model">car.vehicle</field>
+        <field name="arch" type="xml">
+            <graph string="Fleet Overview" type="bar" sample="1">
+                <field name="brand_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="purchase_price" type="measure"/>
+                <field name="mileage" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_car_vehicle_pivot" model="ir.ui.view">
+        <field name="name">car.vehicle.pivot</field>
+        <field name="model">car.vehicle</field>
+        <field name="arch" type="xml">
+            <pivot string="Fleet Overview" sample="1">
+                <field name="brand_id" type="row"/>
+                <field name="model_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="purchase_price" type="measure"/>
+                <field name="mileage" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  car.service.report  –  Graph & Pivot (SQL view)                 -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+
+    <record id="view_car_service_report_graph" model="ir.ui.view">
+        <field name="name">car.service.report.graph</field>
+        <field name="model">car.service.report</field>
+        <field name="arch" type="xml">
+            <graph string="Service Analysis" type="bar" sample="1">
+                <field name="service_date" interval="month" type="row"/>
+                <field name="service_type" type="col"/>
+                <field name="total_cost" type="measure"/>
+                <field name="total_parts_cost" type="measure"/>
+                <field name="service_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_car_service_report_pivot" model="ir.ui.view">
+        <field name="name">car.service.report.pivot</field>
+        <field name="model">car.service.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Service Analysis" sample="1">
+                <field name="brand_id" type="row"/>
+                <field name="vehicle_id" type="row"/>
+                <field name="service_type" type="col"/>
+                <field name="total_cost" type="measure"/>
+                <field name="total_parts_cost" type="measure"/>
+                <field name="service_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_car_service_report_search" model="ir.ui.view">
+        <field name="name">car.service.report.search</field>
+        <field name="model">car.service.report</field>
+        <field name="arch" type="xml">
+            <search string="Service Analysis">
+                <field name="vehicle_id"/>
+                <field name="brand_id"/>
+                <field name="model_id"/>
+                <separator/>
+                <filter string="Done" name="done" domain="[('state','=','done')]"/>
+                <filter string="This Year" name="this_year"
+                        domain="[('service_date','&gt;=', (context_today() + relativedelta(month=1,day=1)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter string="Brand" name="group_brand" context="{'group_by': 'brand_id'}"/>
+                <filter string="Vehicle" name="group_vehicle" context="{'group_by': 'vehicle_id'}"/>
+                <filter string="Service Type" name="group_type" context="{'group_by': 'service_type'}"/>
+                <filter string="Month" name="group_month" context="{'group_by': 'service_date:month'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Actions for Report views                                         -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+
+    <record id="action_car_service_analysis" model="ir.actions.act_window">
+        <field name="name">Service Analysis</field>
+        <field name="res_model">car.service.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="search_view_id" ref="view_car_service_report_search"/>
+        <field name="context">{'search_default_done': 1, 'search_default_group_month': 1}</field>
+    </record>
+
+    <record id="action_car_fleet_overview" model="ir.actions.act_window">
+        <field name="name">Fleet Overview</field>
+        <field name="res_model">car.vehicle</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Reporting Menu                                                    -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+
+    <menuitem id="menu_car_reporting"
+              name="Reporting"
+              parent="car_management.menu_car_management_root"
+              sequence="50"/>
+
+    <menuitem id="menu_car_service_analysis"
+              name="Service Analysis"
+              parent="menu_car_reporting"
+              action="action_car_service_analysis"
+              sequence="10"/>
+
+    <menuitem id="menu_car_fleet_overview"
+              name="Fleet Overview"
+              parent="menu_car_reporting"
+              action="action_car_fleet_overview"
+              sequence="20"/>
+
+</odoo>

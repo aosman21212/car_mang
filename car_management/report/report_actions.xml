@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ── Vehicle Card (print from vehicle form / list) ── -->
+    <record id="action_report_car_vehicle_card" model="ir.actions.report">
+        <field name="name">Vehicle Card</field>
+        <field name="model">car.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">car_management.report_car_vehicle_card</field>
+        <field name="report_file">car_management.report_car_vehicle_card</field>
+        <field name="print_report_name">'Vehicle Card - %s' % (object.license_plate or object.vin)</field>
+        <field name="binding_model_id" ref="model_car_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- ── Service History (print from vehicle form / list) ── -->
+    <record id="action_report_car_service_history" model="ir.actions.report">
+        <field name="name">Service History</field>
+        <field name="model">car.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">car_management.report_car_service_history</field>
+        <field name="report_file">car_management.report_car_service_history</field>
+        <field name="print_report_name">'Service History - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_car_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- ── Fleet Summary (triggered from Reports menu — all active vehicles) ── -->
+    <record id="action_report_car_fleet_summary" model="ir.actions.report">
+        <field name="name">Fleet Summary</field>
+        <field name="model">car.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">car_management.report_car_fleet_summary</field>
+        <field name="report_file">car_management.report_car_fleet_summary</field>
+        <field name="print_report_name">'Fleet Summary'</field>
+        <field name="binding_model_id" ref="model_car_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

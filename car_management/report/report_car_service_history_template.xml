@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_car_service_history">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <!-- ── Header ── -->
+                        <h2 class="mt-0">Service History Report</h2>
+                        <h4 class="text-muted"><t t-esc="doc.name"/></h4>
+
+                        <hr/>
+
+                        <!-- ── Vehicle summary ── -->
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <th class="text-muted" style="width:40%">Brand / Model</th>
+                                        <td>
+                                            <t t-esc="doc.brand_id.name or '—'"/>
+                                            <t t-esc="' ' + doc.model_id.name if doc.model_id else ''"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Year</th>
+                                        <td><t t-esc="doc.year or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">VIN</th>
+                                        <td><t t-esc="doc.vin"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">License Plate</th>
+                                        <td><strong><t t-esc="doc.license_plate or '—'"/></strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <th class="text-muted" style="width:40%">Owner</th>
+                                        <td><t t-esc="doc.owner_id.name or '—'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Current Mileage</th>
+                                        <td><t t-esc="'{:,.0f} km'.format(doc.mileage)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Total Services</th>
+                                        <td><t t-esc="doc.service_count"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted">Last Service</th>
+                                        <td>
+                                            <t t-if="doc.last_service_date">
+                                                <t t-esc="doc.last_service_date" t-options="{'widget': 'date'}"/>
+                                            </t>
+                                            <t t-else="">—</t>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- ── Service records table ── -->
+                        <t t-set="services" t-value="doc.service_ids.sorted('service_date', reverse=True)"/>
+                        <t t-if="services">
+                            <h5>Service Records</h5>
+                            <table class="table table-sm table-bordered">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Reference</th>
+                                        <th>Service Type</th>
+                                        <th>Mileage</th>
+                                        <th>Technician</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Parts</th>
+                                        <th class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="services" t-as="svc">
+                                        <!-- Service row -->
+                                        <tr>
+                                            <td><t t-esc="svc.service_date" t-options="{'widget': 'date'}"/></td>
+                                            <td><t t-esc="svc.name"/></td>
+                                            <td><t t-esc="dict(svc._fields['service_type'].selection).get(svc.service_type, svc.service_type)"/></td>
+                                            <td><t t-esc="'{:,.0f} km'.format(svc.mileage_at_service)"/></td>
+                                            <td><t t-esc="svc.technician or '—'"/></td>
+                                            <td><t t-esc="dict(svc._fields['state'].selection).get(svc.state, svc.state)"/></td>
+                                            <td class="text-end"><t t-esc="'{:,.2f}'.format(svc.parts_cost)"/></td>
+                                            <td class="text-end"><strong><t t-esc="'{:,.2f}'.format(svc.cost)"/></strong></td>
+                                        </tr>
+                                        <!-- Parts sub-rows -->
+                                        <t t-if="svc.part_ids">
+                                            <t t-foreach="svc.part_ids" t-as="part">
+                                                <tr class="table-light" style="font-size:0.85em;">
+                                                    <td colspan="2"></td>
+                                                    <td colspan="3" class="ps-4 text-muted">
+                                                        ↳ <t t-esc="part.name"/>
+                                                    </td>
+                                                    <td class="text-muted">
+                                                        <t t-esc="part.quantity"/> ×
+                                                        <t t-esc="'{:,.2f}'.format(part.unit_price)"/>
+                                                    </td>
+                                                    <td class="text-end text-muted">
+                                                        <t t-esc="'{:,.2f}'.format(part.subtotal)"/>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                        <!-- Next service note -->
+                                        <t t-if="svc.next_service_date">
+                                            <tr class="table-warning" style="font-size:0.85em;">
+                                                <td colspan="8" class="ps-4">
+                                                    <em>Next service scheduled:
+                                                        <t t-esc="svc.next_service_date" t-options="{'widget': 'date'}"/>
+                                                        <t t-if="svc.next_service_mileage">
+                                                            or at <t t-esc="'{:,.0f} km'.format(svc.next_service_mileage)"/>
+                                                        </t>
+                                                    </em>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </tbody>
+                                <tfoot class="table-secondary">
+                                    <tr>
+                                        <th colspan="6">Total</th>
+                                        <th class="text-end">
+                                            <t t-esc="'{:,.2f}'.format(sum(services.mapped('parts_cost')))"/>
+                                        </th>
+                                        <th class="text-end">
+                                            <t t-esc="'{:,.2f}'.format(sum(services.mapped('cost')))"/>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <p class="text-muted"><em>No service records found for this vehicle.</em></p>
+                        </t>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

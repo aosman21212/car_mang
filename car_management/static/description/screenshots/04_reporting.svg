@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f5f5f5"/>
+
+  <!-- TOP NAV -->
+  <rect x="0" y="0" width="1400" height="52" fill="#2c2c2c"/>
+  <rect x="14" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="14" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <text x="42" y="32" font-size="16" fill="#fff" font-weight="600" font-family="Arial,sans-serif">Car Management</text>
+  <text x="230" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Vehicles</text>
+  <text x="300" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Services</text>
+  <text x="375" y="33" font-size="14" fill="#fff" opacity="0.85" font-family="Arial,sans-serif">Reporting</text>
+  <circle cx="1368" cy="26" r="16" fill="#714B67"/>
+  <text x="1368" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">A</text>
+
+  <!-- BREADCRUMB -->
+  <rect x="0" y="52" width="1400" height="44" fill="#fff"/>
+  <rect x="0" y="95" width="1400" height="1" fill="#dee2e6"/>
+  <text x="24" y="80" font-size="15" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Service Analysis</text>
+
+  <!-- VIEW TOGGLE & MEASURES -->
+  <rect x="24" y="110" width="32" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="40" y="130" font-size="14" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">☰</text>
+  <rect x="60" y="110" width="32" height="28" rx="4" fill="#714B67"/>
+  <text x="76" y="130" font-size="14" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">📊</text>
+  <rect x="96" y="110" width="32" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="112" y="130" font-size="14" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">⊞</text>
+  <rect x="140" y="110" width="96" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="188" y="129" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Measures ▾</text>
+  <rect x="244" y="110" width="80" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="284" y="129" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Filters ▾</text>
+
+  <!-- CHART AREA -->
+  <rect x="16" y="154" width="1368" height="540" rx="6" fill="#fff" stroke="#dee2e6"/>
+
+  <!-- Chart title -->
+  <text x="690" y="188" font-size="16" fill="#212529" font-weight="600" text-anchor="middle" font-family="Arial,sans-serif">Service Cost by Vehicle — April 2024</text>
+
+  <!-- Y AXIS -->
+  <text x="72" y="230" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$500</text>
+  <line x1="86" y1="226" x2="1340" y2="226" stroke="#f0f0f0" stroke-width="1"/>
+  <text x="72" y="300" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$400</text>
+  <line x1="86" y1="296" x2="1340" y2="296" stroke="#f0f0f0" stroke-width="1"/>
+  <text x="72" y="370" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$300</text>
+  <line x1="86" y1="366" x2="1340" y2="366" stroke="#f0f0f0" stroke-width="1"/>
+  <text x="72" y="440" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$200</text>
+  <line x1="86" y1="436" x2="1340" y2="436" stroke="#f0f0f0" stroke-width="1"/>
+  <text x="72" y="510" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$100</text>
+  <line x1="86" y1="506" x2="1340" y2="506" stroke="#f0f0f0" stroke-width="1"/>
+  <text x="72" y="580" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$0</text>
+  <line x1="86" y1="576" x2="1340" y2="576" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- BARS  (cost/500 * 350 = bar height from y=576) -->
+  <!-- Corolla $85  → h=60  → y=516 -->
+  <rect x="136"  y="516" width="140" height="60" rx="4" fill="#714B67"/>
+  <text x="206"  y="510" font-size="12" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">$85</text>
+  <text x="206"  y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Corolla 2021</text>
+
+  <!-- RAV4 $220 → h=154 → y=422 -->
+  <rect x="316"  y="422" width="140" height="154" rx="4" fill="#0d6efd"/>
+  <text x="386"  y="416" font-size="12" fill="#0d6efd" text-anchor="middle" font-family="Arial,sans-serif">$220</text>
+  <text x="386"  y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">RAV4 2022</text>
+
+  <!-- Hilux $150 → h=105 → y=471 -->
+  <rect x="496"  y="471" width="140" height="105" rx="4" fill="#198754"/>
+  <text x="566"  y="465" font-size="12" fill="#198754" text-anchor="middle" font-family="Arial,sans-serif">$150</text>
+  <text x="566"  y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Hilux 2020</text>
+
+  <!-- Mustang $195 → h=137 → y=439 -->
+  <rect x="676"  y="439" width="140" height="137" rx="4" fill="#fd7e14"/>
+  <text x="746"  y="433" font-size="12" fill="#fd7e14" text-anchor="middle" font-family="Arial,sans-serif">$195</text>
+  <text x="746"  y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Mustang 2022</text>
+
+  <!-- Model 3 $65 → h=46 → y=530 -->
+  <rect x="856"  y="530" width="140" height="46" rx="4" fill="#6f42c1"/>
+  <text x="926"  y="524" font-size="12" fill="#6f42c1" text-anchor="middle" font-family="Arial,sans-serif">$65</text>
+  <text x="926"  y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Model 3 2023</text>
+
+  <!-- BMW $480 → h=336 → y=240 -->
+  <rect x="1036" y="240" width="140" height="336" rx="4" fill="#dc3545"/>
+  <text x="1106" y="234" font-size="12" fill="#dc3545" text-anchor="middle" font-family="Arial,sans-serif">$480</text>
+  <text x="1106" y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">3 Series 2023</text>
+
+  <!-- Civic placeholder $0 -->
+  <rect x="1216" y="571" width="140" height="5" rx="2" fill="#adb5bd"/>
+  <text x="1286" y="600" font-size="12" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Civic 2023</text>
+
+  <!-- KPI CARDS -->
+  <rect x="16" y="706" width="330" height="80" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="36" y="734" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">Total Service Cost</text>
+  <text x="36" y="770" font-size="28" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$3,240</text>
+
+  <rect x="362" y="706" width="330" height="80" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="382" y="734" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">Services This Month</text>
+  <text x="382" y="770" font-size="28" fill="#212529" font-weight="700" font-family="Arial,sans-serif">12</text>
+
+  <rect x="708" y="706" width="330" height="80" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="728" y="734" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">Avg. Cost / Service</text>
+  <text x="728" y="770" font-size="28" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$270</text>
+
+  <rect x="1054" y="706" width="330" height="80" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="1074" y="734" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">Vehicles Serviced</text>
+  <text x="1074" y="770" font-size="28" fill="#212529" font-weight="700" font-family="Arial,sans-serif">6 / 10</text>
+
+  <!-- LABEL -->
+  <rect x="0" y="830" width="310" height="30" fill="#714B67" opacity="0.9"/>
+  <text x="12" y="851" font-size="14" fill="#fff" font-weight="600" font-family="Arial,sans-serif">📊 Service Cost Analysis — Graph View</text>
+</svg>

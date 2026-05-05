@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  BRANDS                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <record id="brand_toyota" model="car.brand">
+        <field name="name">Toyota</field>
+        <field name="country_id" ref="base.jp"/>
+    </record>
+
+    <record id="brand_bmw" model="car.brand">
+        <field name="name">BMW</field>
+        <field name="country_id" ref="base.de"/>
+    </record>
+
+    <record id="brand_ford" model="car.brand">
+        <field name="name">Ford</field>
+        <field name="country_id" ref="base.us"/>
+    </record>
+
+    <record id="brand_honda" model="car.brand">
+        <field name="name">Honda</field>
+        <field name="country_id" ref="base.jp"/>
+    </record>
+
+    <record id="brand_tesla" model="car.brand">
+        <field name="name">Tesla</field>
+        <field name="country_id" ref="base.us"/>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  MODELS                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <record id="model_toyota_corolla" model="car.model">
+        <field name="name">Corolla</field>
+        <field name="brand_id" ref="brand_toyota"/>
+        <field name="category">sedan</field>
+        <field name="fuel_type">gasoline</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_toyota_rav4" model="car.model">
+        <field name="name">RAV4</field>
+        <field name="brand_id" ref="brand_toyota"/>
+        <field name="category">suv</field>
+        <field name="fuel_type">hybrid</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_toyota_hilux" model="car.model">
+        <field name="name">Hilux</field>
+        <field name="brand_id" ref="brand_toyota"/>
+        <field name="category">pickup</field>
+        <field name="fuel_type">diesel</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_bmw_3series" model="car.model">
+        <field name="name">3 Series</field>
+        <field name="brand_id" ref="brand_bmw"/>
+        <field name="category">sedan</field>
+        <field name="fuel_type">gasoline</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_bmw_x5" model="car.model">
+        <field name="name">X5</field>
+        <field name="brand_id" ref="brand_bmw"/>
+        <field name="category">suv</field>
+        <field name="fuel_type">diesel</field>
+        <field name="seats">7</field>
+    </record>
+
+    <record id="model_ford_mustang" model="car.model">
+        <field name="name">Mustang</field>
+        <field name="brand_id" ref="brand_ford"/>
+        <field name="category">coupe</field>
+        <field name="fuel_type">gasoline</field>
+        <field name="seats">4</field>
+    </record>
+
+    <record id="model_ford_transit" model="car.model">
+        <field name="name">Transit</field>
+        <field name="brand_id" ref="brand_ford"/>
+        <field name="category">van</field>
+        <field name="fuel_type">diesel</field>
+        <field name="seats">9</field>
+    </record>
+
+    <record id="model_honda_civic" model="car.model">
+        <field name="name">Civic</field>
+        <field name="brand_id" ref="brand_honda"/>
+        <field name="category">hatchback</field>
+        <field name="fuel_type">gasoline</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_tesla_model3" model="car.model">
+        <field name="name">Model 3</field>
+        <field name="brand_id" ref="brand_tesla"/>
+        <field name="category">sedan</field>
+        <field name="fuel_type">electric</field>
+        <field name="seats">5</field>
+    </record>
+
+    <record id="model_tesla_modelx" model="car.model">
+        <field name="name">Model X</field>
+        <field name="brand_id" ref="brand_tesla"/>
+        <field name="category">suv</field>
+        <field name="fuel_type">electric</field>
+        <field name="seats">7</field>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  VEHICLES                                                        -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <record id="vehicle_corolla_1" model="car.vehicle">
+        <field name="model_id" ref="model_toyota_corolla"/>
+        <field name="vin">1HGBH41JXMN109186</field>
+        <field name="license_plate">ABC-1234</field>
+        <field name="year">2021</field>
+        <field name="color">White</field>
+        <field name="mileage">32500</field>
+        <field name="state">available</field>
+        <field name="purchase_date">2021-03-15</field>
+        <field name="purchase_price">22500</field>
+        <field name="owner_id" ref="base.res_partner_2"/>
+    </record>
+
+    <record id="vehicle_rav4_1" model="car.vehicle">
+        <field name="model_id" ref="model_toyota_rav4"/>
+        <field name="vin">2T3BFREV4FW321456</field>
+        <field name="license_plate">XYZ-5678</field>
+        <field name="year">2022</field>
+        <field name="color">Silver</field>
+        <field name="mileage">18200</field>
+        <field name="state">in_use</field>
+        <field name="purchase_date">2022-06-01</field>
+        <field name="purchase_price">34900</field>
+        <field name="owner_id" ref="base.res_partner_3"/>
+    </record>
+
+    <record id="vehicle_hilux_1" model="car.vehicle">
+        <field name="model_id" ref="model_toyota_hilux"/>
+        <field name="vin">MR0FX22G200123456</field>
+        <field name="license_plate">HLX-9900</field>
+        <field name="year">2020</field>
+        <field name="color">Black</field>
+        <field name="mileage">75400</field>
+        <field name="state">maintenance</field>
+        <field name="purchase_date">2020-01-10</field>
+        <field name="purchase_price">41000</field>
+        <field name="owner_id" ref="base.res_partner_4"/>
+    </record>
+
+    <record id="vehicle_bmw_3series_1" model="car.vehicle">
+        <field name="model_id" ref="model_bmw_3series"/>
+        <field name="vin">WBA8E9G50GNT43210</field>
+        <field name="license_plate">BMW-3210</field>
+        <field name="year">2023</field>
+        <field name="color">Blue</field>
+        <field name="mileage">9800</field>
+        <field name="state">available</field>
+        <field name="purchase_date">2023-02-20</field>
+        <field name="purchase_price">52000</field>
+        <field name="owner_id" ref="base.res_partner_12"/>
+    </record>
+
+    <record id="vehicle_bmw_x5_1" model="car.vehicle">
+        <field name="model_id" ref="model_bmw_x5"/>
+        <field name="vin">5UXKR0C55F0K76543</field>
+        <field name="license_plate">X5-0077</field>
+        <field name="year">2021</field>
+        <field name="color">Grey</field>
+        <field name="mileage">41200</field>
+        <field name="state">in_use</field>
+        <field name="purchase_date">2021-09-05</field>
+        <field name="purchase_price">78500</field>
+        <field name="owner_id" ref="base.res_partner_2"/>
+    </record>
+
+    <record id="vehicle_mustang_1" model="car.vehicle">
+        <field name="model_id" ref="model_ford_mustang"/>
+        <field name="vin">1FA6P8TH5J5123789</field>
+        <field name="license_plate">MSTNG-22</field>
+        <field name="year">2022</field>
+        <field name="color">Red</field>
+        <field name="mileage">15600</field>
+        <field name="state">available</field>
+        <field name="purchase_date">2022-04-18</field>
+        <field name="purchase_price">46000</field>
+        <field name="owner_id" ref="base.res_partner_10"/>
+    </record>
+
+    <record id="vehicle_transit_1" model="car.vehicle">
+        <field name="model_id" ref="model_ford_transit"/>
+        <field name="vin">WF0XXXTTGXHR00987</field>
+        <field name="license_plate">VAN-4455</field>
+        <field name="year">2019</field>
+        <field name="color">White</field>
+        <field name="mileage">112300</field>
+        <field name="state">in_use</field>
+        <field name="purchase_date">2019-07-22</field>
+        <field name="purchase_price">35000</field>
+        <field name="owner_id" ref="base.res_partner_3"/>
+    </record>
+
+    <record id="vehicle_civic_1" model="car.vehicle">
+        <field name="model_id" ref="model_honda_civic"/>
+        <field name="vin">2HGFC2F59MH543210</field>
+        <field name="license_plate">CVC-7788</field>
+        <field name="year">2023</field>
+        <field name="color">Pearl White</field>
+        <field name="mileage">5100</field>
+        <field name="state">available</field>
+        <field name="purchase_date">2023-08-30</field>
+        <field name="purchase_price">26800</field>
+        <field name="owner_id" ref="base.res_partner_12"/>
+    </record>
+
+    <record id="vehicle_tesla_m3_1" model="car.vehicle">
+        <field name="model_id" ref="model_tesla_model3"/>
+        <field name="vin">5YJ3E1EA7JF012345</field>
+        <field name="license_plate">EV-3001</field>
+        <field name="year">2023</field>
+        <field name="color">Midnight Black</field>
+        <field name="mileage">22000</field>
+        <field name="state">in_use</field>
+        <field name="purchase_date">2023-01-15</field>
+        <field name="purchase_price">55000</field>
+        <field name="owner_id" ref="base.res_partner_10"/>
+    </record>
+
+    <record id="vehicle_old_corolla" model="car.vehicle">
+        <field name="model_id" ref="model_toyota_corolla"/>
+        <field name="vin">1NXBR12E77Z654321</field>
+        <field name="license_plate">OLD-9999</field>
+        <field name="year">2015</field>
+        <field name="color">Beige</field>
+        <field name="mileage">198000</field>
+        <field name="state">sold</field>
+        <field name="purchase_date">2015-05-12</field>
+        <field name="purchase_price">14000</field>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  SERVICE RECORDS                                                 -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Corolla 1 – completed oil change -->
+    <record id="service_corolla_oil" model="car.service">
+        <field name="name">SRV/DEMO/0001</field>
+        <field name="vehicle_id" ref="vehicle_corolla_1"/>
+        <field name="service_date">2024-11-10</field>
+        <field name="service_type">oil_change</field>
+        <field name="mileage_at_service">28000</field>
+        <field name="technician">Quick Lube Center</field>
+        <field name="cost">85</field>
+        <field name="description">Engine oil and filter replaced. Topped up all fluids.</field>
+        <field name="next_service_date">2025-05-10</field>
+        <field name="next_service_mileage">33000</field>
+        <field name="state">done</field>
+    </record>
+
+    <!-- RAV4 – in-progress brake service -->
+    <record id="service_rav4_brakes" model="car.service">
+        <field name="name">SRV/DEMO/0002</field>
+        <field name="vehicle_id" ref="vehicle_rav4_1"/>
+        <field name="service_date">2026-04-28</field>
+        <field name="service_type">brake_service</field>
+        <field name="mileage_at_service">18200</field>
+        <field name="technician">City Auto Workshop</field>
+        <field name="cost">320</field>
+        <field name="description">Front brake pads and rotors replacement.</field>
+        <field name="state">in_progress</field>
+    </record>
+
+    <!-- Hilux – scheduled engine repair -->
+    <record id="service_hilux_engine" model="car.service">
+        <field name="name">SRV/DEMO/0003</field>
+        <field name="vehicle_id" ref="vehicle_hilux_1"/>
+        <field name="service_date">2026-05-05</field>
+        <field name="service_type">engine</field>
+        <field name="mileage_at_service">75400</field>
+        <field name="technician">Pro Mechanics Ltd</field>
+        <field name="cost">1200</field>
+        <field name="description">Engine knocking noise diagnosis and repair. Suspected worn bearings.</field>
+        <field name="state">scheduled</field>
+    </record>
+
+    <!-- BMW 3 Series – completed inspection -->
+    <record id="service_bmw3_inspection" model="car.service">
+        <field name="name">SRV/DEMO/0004</field>
+        <field name="vehicle_id" ref="vehicle_bmw_3series_1"/>
+        <field name="service_date">2025-12-01</field>
+        <field name="service_type">inspection</field>
+        <field name="mileage_at_service">7500</field>
+        <field name="technician">BMW Authorized Service</field>
+        <field name="cost">250</field>
+        <field name="description">Annual inspection. All systems nominal.</field>
+        <field name="next_service_date">2026-12-01</field>
+        <field name="next_service_mileage">17500</field>
+        <field name="state">done</field>
+    </record>
+
+    <!-- BMW X5 – completed tire rotation -->
+    <record id="service_bmwx5_tires" model="car.service">
+        <field name="name">SRV/DEMO/0005</field>
+        <field name="vehicle_id" ref="vehicle_bmw_x5_1"/>
+        <field name="service_date">2025-08-15</field>
+        <field name="service_type">tire_rotation</field>
+        <field name="mileage_at_service">38000</field>
+        <field name="technician">TirePro Shop</field>
+        <field name="cost">120</field>
+        <field name="description">Tire rotation and pressure balancing. Rear left tyre replaced.</field>
+        <field name="state">done</field>
+    </record>
+
+    <!-- Tesla Model 3 – scheduled A/C service -->
+    <record id="service_tesla_ac" model="car.service">
+        <field name="name">SRV/DEMO/0006</field>
+        <field name="vehicle_id" ref="vehicle_tesla_m3_1"/>
+        <field name="service_date">2026-05-10</field>
+        <field name="service_type">ac</field>
+        <field name="mileage_at_service">22000</field>
+        <field name="technician">Tesla Service Center</field>
+        <field name="cost">180</field>
+        <field name="description">A/C re-gas and cabin air filter replacement.</field>
+        <field name="state">scheduled</field>
+    </record>
+
+    <!-- Transit – completed oil change -->
+    <record id="service_transit_oil" model="car.service">
+        <field name="name">SRV/DEMO/0007</field>
+        <field name="vehicle_id" ref="vehicle_transit_1"/>
+        <field name="service_date">2025-10-20</field>
+        <field name="service_type">oil_change</field>
+        <field name="mileage_at_service">105000</field>
+        <field name="technician">Fleet Services Co.</field>
+        <field name="cost">110</field>
+        <field name="description">Full synthetic oil change, oil filter and air filter replaced.</field>
+        <field name="next_service_date">2026-04-20</field>
+        <field name="next_service_mileage">115000</field>
+        <field name="state">done</field>
+    </record>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!--  SERVICE PARTS (for RAV4 brake service)                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <record id="part_rav4_brake_pads" model="car.service.part">
+        <field name="service_id" ref="service_rav4_brakes"/>
+        <field name="name">Front Brake Pads (set)</field>
+        <field name="quantity">1</field>
+        <field name="unit_price">95</field>
+    </record>
+
+    <record id="part_rav4_rotors" model="car.service.part">
+        <field name="service_id" ref="service_rav4_brakes"/>
+        <field name="name">Front Brake Rotors (pair)</field>
+        <field name="quantity">2</field>
+        <field name="unit_price">75</field>
+    </record>
+
+    <record id="part_rav4_brake_fluid" model="car.service.part">
+        <field name="service_id" ref="service_rav4_brakes"/>
+        <field name="name">Brake Fluid (1L)</field>
+        <field name="quantity">1</field>
+        <field name="unit_price">15</field>
+    </record>
+
+    <!-- Parts for Transit oil change -->
+    <record id="part_transit_oil" model="car.service.part">
+        <field name="service_id" ref="service_transit_oil"/>
+        <field name="name">Full Synthetic Engine Oil 5W-30 (5L)</field>
+        <field name="quantity">2</field>
+        <field name="unit_price">28</field>
+    </record>
+
+    <record id="part_transit_oil_filter" model="car.service.part">
+        <field name="service_id" ref="service_transit_oil"/>
+        <field name="name">Oil Filter</field>
+        <field name="quantity">1</field>
+        <field name="unit_price">12</field>
+    </record>
+
+    <record id="part_transit_air_filter" model="car.service.part">
+        <field name="service_id" ref="service_transit_oil"/>
+        <field name="name">Air Filter</field>
+        <field name="quantity">1</field>
+        <field name="unit_price">22</field>
+    </record>
+
+</odoo>

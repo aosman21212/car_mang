@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══ Car Service – List ═══ -->
+    <record id="view_car_service_list" model="ir.ui.view">
+        <field name="name">car.service.list</field>
+        <field name="model">car.service</field>
+        <field name="arch" type="xml">
+            <list string="Service Records"
+                  decoration-success="state == 'done'"
+                  decoration-warning="state == 'in_progress'"
+                  decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="brand_id" optional="show"/>
+                <field name="service_date"/>
+                <field name="service_type"/>
+                <field name="mileage_at_service" optional="show"/>
+                <field name="technician" optional="show"/>
+                <field name="cost"/>
+                <field name="next_service_date" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-warning="state == 'in_progress'"
+                       decoration-info="state == 'scheduled'"
+                       decoration-danger="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ═══ Car Service – Form ═══ -->
+    <record id="view_car_service_form" model="ir.ui.view">
+        <field name="name">car.service.form</field>
+        <field name="model">car.service</field>
+        <field name="arch" type="xml">
+            <form string="Service Record">
+                <header>
+                    <button name="action_start" string="Start Service"
+                            type="object" class="btn-primary"
+                            invisible="state != 'scheduled'"/>
+                    <button name="action_done" string="Mark as Done"
+                            type="object" class="btn-success"
+                            invisible="state != 'in_progress'"/>
+                    <button name="action_cancel" string="Cancel"
+                            type="object" class="btn-secondary"
+                            invisible="state in ('done', 'cancelled')"/>
+                    <button name="action_reset" string="Reset to Scheduled"
+                            type="object" class="btn-secondary"
+                            invisible="state != 'cancelled'"/>
+                    <button name="action_create_invoice" string="Create Invoice"
+                            type="object" class="btn-primary"
+                            invisible="state != 'done' or invoice_id != False"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="scheduled,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                                type="object"
+                                name="action_view_invoice"
+                                icon="fa-pencil-square-o"
+                                invisible="invoice_count == 0">
+                            <field name="invoice_count" widget="statinfo" string="Invoice"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Service Info">
+                            <field name="vehicle_id"/>
+                            <field name="service_type"/>
+                            <field name="service_date"/>
+                            <field name="mileage_at_service"/>
+                            <field name="technician"/>
+                        </group>
+                        <group string="Cost">
+                            <field name="parts_cost" string="Parts Cost"/>
+                            <field name="cost" string="Total Cost"/>
+                            <field name="invoice_id" readonly="1" invisible="invoice_id == False"/>
+                            <field name="invoice_state" readonly="1" invisible="invoice_id == False"
+                                   widget="badge"
+                                   decoration-success="invoice_state == 'paid'"
+                                   decoration-warning="invoice_state == 'partial'"
+                                   decoration-info="invoice_state == 'not_paid'"/>
+                        </group>
+                    </group>
+                    <group string="Next Service">
+                        <field name="next_service_date"/>
+                        <field name="next_service_mileage"/>
+                    </group>
+                    <notebook>
+                        <page string="Parts / Materials" name="parts">
+                            <field name="part_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="subtotal" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Description" name="description">
+                            <field name="description" placeholder="Describe the work performed..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- ═══ Car Service – Search ═══ -->
+    <record id="view_car_service_search" model="ir.ui.view">
+        <field name="name">car.service.search</field>
+        <field name="model">car.service</field>
+        <field name="arch" type="xml">
+            <search string="Search Services">
+                <field name="name"/>
+                <field name="vehicle_id"/>
+                <field name="technician"/>
+                <separator/>
+                <filter string="Scheduled" name="scheduled" domain="[('state','=','scheduled')]"/>
+                <filter string="In Progress" name="in_progress" domain="[('state','=','in_progress')]"/>
+                <filter string="Done" name="done" domain="[('state','=','done')]"/>
+                <separator/>
+                <separator/>
+                <filter string="Vehicle" name="group_vehicle" context="{'group_by': 'vehicle_id'}"/>
+                <filter string="Brand" name="group_brand" context="{'group_by': 'brand_id'}"/>
+                <filter string="Service Type" name="group_type" context="{'group_by': 'service_type'}"/>
+                <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                <filter string="Date" name="group_date" context="{'group_by': 'service_date:month'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ═══ Car Service – Action ═══ -->
+    <record id="action_car_service" model="ir.actions.act_window">
+        <field name="name">Service Records</field>
+        <field name="res_model">car.service</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+        <field name="search_view_id" ref="view_car_service_search"/>
+    </record>
+
+    <!-- ═══ Sequence ═══ -->
+    <record id="seq_car_service" model="ir.sequence">
+        <field name="name">Car Service Reference</field>
+        <field name="code">car.service</field>
+        <field name="prefix">SRV/%(year)s/</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+</odoo>

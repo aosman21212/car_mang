@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_car_fleet_summary">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <!-- ── Cover ── -->
+                    <div class="text-center mb-5 mt-3">
+                        <h1>Fleet Summary Report</h1>
+                        <p class="text-muted">
+                            Printed on:
+                            <t t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                        </p>
+                        <p>
+                            <strong>Total Active Vehicles: <t t-esc="len(docs)"/></strong>
+                        </p>
+                    </div>
+
+                    <hr/>
+
+                    <!-- ── Section per state ── -->
+                    <t t-set="state_labels" t-value="{
+                        'available':   'Available',
+                        'in_use':      'In Use',
+                        'maintenance': 'Under Maintenance',
+                        'sold':        'Sold',
+                        'scrapped':    'Scrapped',
+                    }"/>
+
+                    <t t-foreach="['available', 'in_use', 'maintenance', 'sold', 'scrapped']" t-as="st">
+                        <t t-set="group" t-value="docs.filtered(lambda v: v.state == st)"/>
+                        <t t-if="group">
+                            <h4 class="mt-4">
+                                <t t-esc="state_labels.get(st, st)"/>
+                                <small class="text-muted ms-2">(<t t-esc="len(group)"/> vehicles)</small>
+                            </h4>
+                            <table class="table table-sm table-bordered mb-4">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th>Vehicle</th>
+                                        <th>Brand</th>
+                                        <th>Model</th>
+                                        <th>Year</th>
+                                        <th>Plate</th>
+                                        <th>Owner</th>
+                                        <th class="text-end">Mileage</th>
+                                        <th>Last Service</th>
+                                        <th class="text-end"># Svc</th>
+                                        <th class="text-end">Purchase Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="group.sorted('brand_id')" t-as="v">
+                                        <tr>
+                                            <td><t t-esc="v.name"/></td>
+                                            <td><t t-esc="v.brand_id.name or '—'"/></td>
+                                            <td><t t-esc="v.model_id.name or '—'"/></td>
+                                            <td><t t-esc="v.year"/></td>
+                                            <td><t t-esc="v.license_plate or '—'"/></td>
+                                            <td><t t-esc="v.owner_id.name or '—'"/></td>
+                                            <td class="text-end"><t t-esc="'{:,.0f} km'.format(v.mileage)"/></td>
+                                            <td>
+                                                <t t-if="v.last_service_date">
+                                                    <t t-esc="v.last_service_date" t-options="{'widget': 'date'}"/>
+                                                </t>
+                                                <t t-else="">—</t>
+                                            </td>
+                                            <td class="text-end"><t t-esc="v.service_count"/></td>
+                                            <td class="text-end">
+                                                <t t-esc="'{:,.2f}'.format(v.purchase_price) if v.purchase_price else '—'"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                    </t>
+
+                    <hr/>
+
+                    <!-- ── Summary by Brand ── -->
+                    <h4 class="mt-4">Fleet Summary by Brand</h4>
+                    <t t-set="brands" t-value="docs.mapped('brand_id')"/>
+                    <table class="table table-sm table-bordered">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>Brand</th>
+                                <th class="text-end">Vehicles</th>
+                                <th class="text-end">Total Purchase Value</th>
+                                <th class="text-end">Avg. Mileage</th>
+                                <th class="text-end">Total Services</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="brands.sorted('name')" t-as="brand">
+                                <t t-set="bvehicles" t-value="docs.filtered(lambda v: v.brand_id == brand)"/>
+                                <tr>
+                                    <td><t t-esc="brand.name"/></td>
+                                    <td class="text-end"><t t-esc="len(bvehicles)"/></td>
+                                    <td class="text-end">
+                                        <t t-esc="'{:,.2f}'.format(sum(bvehicles.mapped('purchase_price')))"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="'{:,.0f} km'.format(sum(bvehicles.mapped('mileage')) / len(bvehicles) if bvehicles else 0)"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="sum(bvehicles.mapped('service_count'))"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <tfoot class="table-secondary">
+                            <tr>
+                                <th>Total</th>
+                                <th class="text-end"><t t-esc="len(docs)"/></th>
+                                <th class="text-end">
+                                    <t t-esc="'{:,.2f}'.format(sum(docs.mapped('purchase_price')))"/>
+                                </th>
+                                <th class="text-end">
+                                    <t t-esc="'{:,.0f} km'.format(sum(docs.mapped('mileage')) / len(docs) if docs else 0)"/>
+                                </th>
+                                <th class="text-end">
+                                    <t t-esc="sum(docs.mapped('service_count'))"/>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

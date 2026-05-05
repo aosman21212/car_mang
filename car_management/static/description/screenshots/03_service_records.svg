@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f5f5f5"/>
+
+  <!-- TOP NAV -->
+  <rect x="0" y="0" width="1400" height="52" fill="#2c2c2c"/>
+  <rect x="14" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="14" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <text x="42" y="32" font-size="16" fill="#fff" font-weight="600" font-family="Arial,sans-serif">Car Management</text>
+  <text x="230" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Vehicles</text>
+  <text x="300" y="33" font-size="14" fill="#fff" opacity="0.85" font-family="Arial,sans-serif">Services</text>
+  <text x="375" y="33" font-size="14" fill="#fff" opacity="0.6" font-family="Arial,sans-serif">Reporting</text>
+  <circle cx="1368" cy="26" r="16" fill="#714B67"/>
+  <text x="1368" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">A</text>
+
+  <!-- BREADCRUMB -->
+  <rect x="0" y="52" width="1400" height="44" fill="#fff"/>
+  <rect x="0" y="95" width="1400" height="1" fill="#dee2e6"/>
+  <text x="24" y="80" font-size="15" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Service Records</text>
+  <text x="160" y="80" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">12 records</text>
+  <rect x="1148" y="60" width="64" height="28" rx="4" fill="#714B67"/>
+  <text x="1180" y="79" font-size="13" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">New</text>
+  <rect x="1220" y="60" width="90" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1265" y="79" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Import</text>
+
+  <!-- FILTER BAR -->
+  <rect x="24" y="110" width="32" height="28" rx="4" fill="#714B67"/>
+  <text x="40" y="130" font-size="14" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">☰</text>
+  <rect x="60" y="110" width="32" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="76" y="130" font-size="14" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">⊞</text>
+  <rect x="110" y="110" width="82" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="151" y="129" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Filters ▾</text>
+  <rect x="200" y="110" width="94" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="247" y="129" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Group By ▾</text>
+  <!-- Active filter badge -->
+  <rect x="302" y="110" width="130" height="28" rx="14" fill="#e8d5f0" stroke="#714B67" stroke-width="1"/>
+  <text x="366" y="129" font-size="12" fill="#714B67" text-anchor="middle" font-family="Arial,sans-serif">State: In Progress ✕</text>
+
+  <!-- LIST HEADER -->
+  <rect x="0" y="152" width="1400" height="38" fill="#f8f9fa"/>
+  <rect x="0" y="152" width="1400" height="1" fill="#dee2e6"/>
+  <rect x="0" y="189" width="1400" height="1" fill="#dee2e6"/>
+  <rect x="24" y="163" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">SERVICE NAME</text>
+  <text x="330"  y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">VEHICLE</text>
+  <text x="560"  y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">TYPE</text>
+  <text x="740"  y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">DATE</text>
+  <text x="910"  y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">COST</text>
+  <text x="1060" y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">TECHNICIAN</text>
+  <text x="1250" y="176" font-size="12" fill="#6c757d" font-weight="600" font-family="Arial,sans-serif">STATUS</text>
+
+  <!-- SERVICE ROWS -->
+  <!-- Row 1 -->
+  <rect x="0" y="190" width="1400" height="52" fill="#fff"/>
+  <rect x="0" y="241" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="205" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="220" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0001</text>
+  <text x="60"   y="236" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Oil Change &amp; Filter</text>
+  <text x="330"  y="220" font-size="13" fill="#212529" font-family="Arial,sans-serif">Corolla 2021</text>
+  <text x="330"  y="236" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">ABC-1234</text>
+  <text x="560"  y="228" font-size="13" fill="#495057" font-family="Arial,sans-serif">Maintenance</text>
+  <text x="740"  y="228" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/15/2024</text>
+  <text x="910"  y="228" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$85.00</text>
+  <text x="1060" y="228" font-size="13" fill="#495057" font-family="Arial,sans-serif">Mohamed Ali</text>
+  <rect x="1245" y="213" width="78" height="22" rx="11" fill="#fff3cd"/>
+  <text x="1284" y="229" font-size="12" fill="#856404" text-anchor="middle" font-family="Arial,sans-serif">⏳ In Progress</text>
+
+  <!-- Row 2 -->
+  <rect x="0" y="242" width="1400" height="52" fill="#f8f9fa"/>
+  <rect x="0" y="293" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="257" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="272" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0002</text>
+  <text x="60"   y="288" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Brake Pad Replacement</text>
+  <text x="330"  y="272" font-size="13" fill="#212529" font-family="Arial,sans-serif">RAV4 2022</text>
+  <text x="330"  y="288" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">XYZ-5678</text>
+  <text x="560"  y="280" font-size="13" fill="#495057" font-family="Arial,sans-serif">Repair</text>
+  <text x="740"  y="280" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/18/2024</text>
+  <text x="910"  y="280" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$220.00</text>
+  <text x="1060" y="280" font-size="13" fill="#495057" font-family="Arial,sans-serif">Khalid Hassan</text>
+  <rect x="1245" y="265" width="90" height="22" rx="11" fill="#d4edda"/>
+  <text x="1290" y="281" font-size="12" fill="#155724" text-anchor="middle" font-family="Arial,sans-serif">✓ Completed</text>
+
+  <!-- Row 3 -->
+  <rect x="0" y="294" width="1400" height="52" fill="#fff"/>
+  <rect x="0" y="345" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="309" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="324" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0003</text>
+  <text x="60"   y="340" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Full Engine Inspection</text>
+  <text x="330"  y="324" font-size="13" fill="#212529" font-family="Arial,sans-serif">Hilux 2020</text>
+  <text x="330"  y="340" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">HLX-9900</text>
+  <text x="560"  y="332" font-size="13" fill="#495057" font-family="Arial,sans-serif">Inspection</text>
+  <text x="740"  y="332" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/20/2024</text>
+  <text x="910"  y="332" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$150.00</text>
+  <text x="1060" y="332" font-size="13" fill="#495057" font-family="Arial,sans-serif">Mohamed Ali</text>
+  <rect x="1245" y="317" width="78" height="22" rx="11" fill="#fff3cd"/>
+  <text x="1284" y="333" font-size="12" fill="#856404" text-anchor="middle" font-family="Arial,sans-serif">⏳ In Progress</text>
+
+  <!-- Row 4 -->
+  <rect x="0" y="346" width="1400" height="52" fill="#f8f9fa"/>
+  <rect x="0" y="397" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="361" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="376" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0004</text>
+  <text x="60"   y="392" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">AC System Service</text>
+  <text x="330"  y="376" font-size="13" fill="#212529" font-family="Arial,sans-serif">Mustang 2022</text>
+  <text x="330"  y="392" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">MSTNG-22</text>
+  <text x="560"  y="384" font-size="13" fill="#495057" font-family="Arial,sans-serif">Maintenance</text>
+  <text x="740"  y="384" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/22/2024</text>
+  <text x="910"  y="384" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$195.00</text>
+  <text x="1060" y="384" font-size="13" fill="#495057" font-family="Arial,sans-serif">Yusuf Ibrahim</text>
+  <rect x="1245" y="369" width="68" height="22" rx="11" fill="#cce5ff"/>
+  <text x="1279" y="385" font-size="12" fill="#004085" text-anchor="middle" font-family="Arial,sans-serif">● Scheduled</text>
+
+  <!-- Row 5 -->
+  <rect x="0" y="398" width="1400" height="52" fill="#fff"/>
+  <rect x="0" y="449" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="413" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="428" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0005</text>
+  <text x="60"   y="444" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Tyre Rotation &amp; Alignment</text>
+  <text x="330"  y="428" font-size="13" fill="#212529" font-family="Arial,sans-serif">Model 3 2023</text>
+  <text x="330"  y="444" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">EV-3001</text>
+  <text x="560"  y="436" font-size="13" fill="#495057" font-family="Arial,sans-serif">Maintenance</text>
+  <text x="740"  y="436" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/25/2024</text>
+  <text x="910"  y="436" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$65.00</text>
+  <text x="1060" y="436" font-size="13" fill="#495057" font-family="Arial,sans-serif">Khalid Hassan</text>
+  <rect x="1245" y="421" width="90" height="22" rx="11" fill="#d4edda"/>
+  <text x="1290" y="437" font-size="12" fill="#155724" text-anchor="middle" font-family="Arial,sans-serif">✓ Completed</text>
+
+  <!-- Row 6 -->
+  <rect x="0" y="450" width="1400" height="52" fill="#f8f9fa"/>
+  <rect x="0" y="501" width="1400" height="1" fill="#f0f0f0"/>
+  <rect x="24" y="465" width="16" height="16" rx="3" fill="none" stroke="#adb5bd" stroke-width="1.5"/>
+  <text x="60"   y="480" font-size="14" fill="#714B67" font-weight="500" font-family="Arial,sans-serif">SRV/2024/0006</text>
+  <text x="60"   y="496" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Windshield Replacement</text>
+  <text x="330"  y="480" font-size="13" fill="#212529" font-family="Arial,sans-serif">3 Series 2023</text>
+  <text x="330"  y="496" font-size="11" fill="#6c757d" font-family="Arial,sans-serif">BMW-3210</text>
+  <text x="560"  y="488" font-size="13" fill="#495057" font-family="Arial,sans-serif">Repair</text>
+  <text x="740"  y="488" font-size="13" fill="#495057" font-family="Arial,sans-serif">04/28/2024</text>
+  <text x="910"  y="488" font-size="13" fill="#212529" font-weight="600" font-family="Arial,sans-serif">$480.00</text>
+  <text x="1060" y="488" font-size="13" fill="#495057" font-family="Arial,sans-serif">Yusuf Ibrahim</text>
+  <rect x="1245" y="473" width="68" height="22" rx="11" fill="#cce5ff"/>
+  <text x="1279" y="489" font-size="12" fill="#004085" text-anchor="middle" font-family="Arial,sans-serif">● Scheduled</text>
+
+  <!-- TOTAL ROW -->
+  <rect x="0" y="760" width="1400" height="52" fill="#f8f9fa"/>
+  <rect x="0" y="760" width="1400" height="1" fill="#dee2e6"/>
+  <text x="830" y="791" font-size="13" fill="#6c757d" font-weight="600" text-anchor="end" font-family="Arial,sans-serif">Total (12 records):</text>
+  <text x="970" y="791" font-size="14" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$3,240.00</text>
+
+  <!-- PAGINATION -->
+  <rect x="0" y="810" width="1400" height="50" fill="#fff"/>
+  <rect x="0" y="810" width="1400" height="1" fill="#dee2e6"/>
+  <text x="24" y="841" font-size="13" fill="#6c757d" font-family="Arial,sans-serif">1-6 / 12</text>
+  <rect x="1310" y="820" width="32" height="26" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1326" y="838" font-size="14" fill="#adb5bd" text-anchor="middle" font-family="Arial,sans-serif">‹</text>
+  <rect x="1350" y="820" width="32" height="26" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="1366" y="838" font-size="14" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">›</text>
+
+  <!-- LABEL -->
+  <rect x="0" y="830" width="300" height="30" fill="#714B67" opacity="0.9"/>
+  <text x="12" y="851" font-size="14" fill="#fff" font-weight="600" font-family="Arial,sans-serif">🔧 Service Records List View</text>
+</svg>
