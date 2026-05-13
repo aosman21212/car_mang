@@ -12,9 +12,10 @@ A comprehensive module for managing:
 - Ownership records
 - Service / Maintenance history
     """,
-    'author': 'abdzoro89',
-    'website': 'https://apps.odoo.com',
+    'author': 'leapai.ai',
+    'website': 'https://leapai.ai/en/',
     'support': 'abdzoro89@gmail.com',
+    'maintainer': 'a.osman@bab.com.sa',
     'price': 0.0,
     'currency': 'EUR',
     'images': ['static/description/banner.svg', 'static/description/icon.png'],
